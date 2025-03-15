@@ -129,7 +129,7 @@ const TrueFocus = ({
 						ref={(el) => {
 							wordRefs.current[index] = el;
 						}}
-						className="relative text-[5rem]  font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600"
+						className="relative text-[5rem]  font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 mr-4"
 						style={{
 							filter: `blur(${isActive ? 0 : blurAmount}px)`,
 							transition: `filter ${animationDuration}s ease`,
