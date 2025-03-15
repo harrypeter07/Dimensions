@@ -1,11 +1,7 @@
-import InfiniteMenu from '@/components/InfiniteMenu'
+// import InfiniteMenu from '@/components/InfiniteMenu'
+import InfiniteMenu, { ItemProps } from '@/components/InfiniteMenu';
 
-interface ItemProps  {
-  image: string;
-  link: string;
-  title: string;
-  description: string;
-}
+
 
 const items: ItemProps[] = [
   {
@@ -35,11 +31,13 @@ const items: ItemProps[] = [
 ];
 
 const Component = () => {
-  return (
-    <div style={{ height: '600px', position: 'relative' }}>
-      <InfiniteMenu items={items}/>
-    </div>
-  );
+    return (
+        <div style={{ height: '100%', position: 'relative'  , width: '100%'}}>
+          <InfiniteMenu items={items} />
+        </div>
+      );
 };
 
 export default Component;
+
+
