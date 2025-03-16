@@ -15,12 +15,10 @@ const AnimatedHero = () => {
 	const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
 	const spheresRef = useRef<THREE.Mesh[]>([]);
 	const [mounted, setMounted] = useState(false);
-
+console.log(mounted);
 	useEffect(() => {
-		// Set mounted to true after component mounts
 		setMounted(true);
 		
-		// Initialize Three.js scene
 		sceneRef.current = new THREE.Scene();
 		cameraRef.current = new THREE.PerspectiveCamera(
 			75,
@@ -48,31 +46,31 @@ const AnimatedHero = () => {
 			rendererRef.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 			containerRef.current.appendChild(rendererRef.current.domElement);
 
-			// Create multiple colorful spheres
+			// Updated sphere colors with new color scheme
 			const colors = [
-				0xff6b6b, // Red
-				0x4ecdc4, // Teal
-				0xffe66d, // Yellow
-				0xa374db, // Purple
-				0x95e1d3, // Mint
+				0x00FFFF, // Electric Blue
+				0xFF00FF, // Magenta
+				0x00FF00, // Neon Green
+				0x4169E1, // Royal Blue
+				0xFF1493  // Deep Pink
 			];
 
 			colors.forEach((color, index) => {
 				const geometry = new THREE.SphereGeometry(0.5, 32, 32);
 				const material = new THREE.MeshPhongMaterial({
 					color: color,
-					shininess: 100,
+					shininess: 150,
 					specular: 0xffffff,
+					emissive: color,
+					emissiveIntensity: 0.2
 				});
 				const sphere = new THREE.Mesh(geometry, material);
 
-				// Position spheres in a circular pattern
 				const angle = (index / colors.length) * Math.PI * 2;
 				sphere.position.x = Math.cos(angle) * 3;
 				sphere.position.y = Math.sin(angle) * 3;
 				sphere.position.z = 0;
 
-				// Store initial positions
 				sphere.userData.initialY = sphere.position.y;
 				sphere.userData.initialX = sphere.position.x;
 
@@ -82,17 +80,19 @@ const AnimatedHero = () => {
 				spheresRef.current.push(sphere);
 			});
 
-			// Add lights
-			const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-			const pointLight = new THREE.PointLight(0xffffff, 1.5);
-			pointLight.position.set(10, 10, 10);
-			const pointLight2 = new THREE.PointLight(0xffffff, 1.2);
+			// Enhanced lighting setup
+			const ambientLight = new THREE.AmbientLight(0x0A0F1C, 0.5);
+			const pointLight1 = new THREE.PointLight(0x00FFFF, 2); // Electric Blue
+			pointLight1.position.set(10, 10, 10);
+			const pointLight2 = new THREE.PointLight(0xFF00FF, 1.5); // Magenta
 			pointLight2.position.set(-10, -10, 10);
-			sceneRef.current.add(ambientLight, pointLight, pointLight2);
+			const pointLight3 = new THREE.PointLight(0x00FF00, 1.2); // Neon Green
+			pointLight3.position.set(0, 0, 15);
+
+			sceneRef.current.add(ambientLight, pointLight1, pointLight2, pointLight3);
 
 			cameraRef.current.position.z = 6;
 
-			// Add click event listener for sphere bouncing
 			const raycaster = new THREE.Raycaster();
 			const mouse = new THREE.Vector2();
 
@@ -107,14 +107,11 @@ const AnimatedHero = () => {
 					if (intersects.length > 0) {
 						const sphere = intersects[0].object;
 						gsap.to(sphere.position, {
-							y: sphere.userData.initialY + 2,
+							y: sphere.position.y + 1,
 							duration: 0.5,
-							ease: "power2.out",
 							yoyo: true,
 							repeat: 1,
-							onComplete: () => {
-								sphere.position.y = sphere.userData.initialY;
-							},
+							ease: "power2.out"
 						});
 					}
 				}
@@ -122,108 +119,52 @@ const AnimatedHero = () => {
 
 			window.addEventListener("click", handleClick);
 
-			// Animation loop
 			const animate = () => {
 				requestAnimationFrame(animate);
 
-				// Rotate spheres and add floating animation
 				spheresRef.current.forEach((sphere, index) => {
+					const time = Date.now() * 0.001;
+					const offset = index * (Math.PI / spheresRef.current.length);
+					
 					sphere.rotation.x += 0.01;
 					sphere.rotation.y += 0.01;
 
-					// Add floating animation with position reset
-					const floatOffset = Math.sin(Date.now() * 0.001 + index) * 0.2;
-					sphere.position.y = sphere.userData.initialY + floatOffset;
-					
-					// Add slight horizontal movement
-					const horizontalOffset = Math.cos(Date.now() * 0.0005 + index) * 0.1;
-					sphere.position.x = sphere.userData.initialX + horizontalOffset;
+					// Orbital movement
+					const radius = 3;
+					sphere.position.x = Math.cos(time + offset) * radius;
+					sphere.position.y = Math.sin(time + offset) * radius;
 				});
 
-				if (sceneRef.current && cameraRef.current && rendererRef.current) {
+				if (rendererRef.current && sceneRef.current && cameraRef.current) {
 					rendererRef.current.render(sceneRef.current, cameraRef.current);
 				}
 			};
+
 			animate();
 
-			// GSAP Animations with timeline reset
-			const tl = gsap.timeline({ paused: true });
-
-			tl.from(".hero-title", {
-				opacity: 0,
-				y: 100,
-				duration: 1.5,
-				ease: "power4.out",
-			})
-				.from(
-					".hero-subtitle",
-					{
-						opacity: 0,
-						y: 50,
-						duration: 1.2,
-						ease: "power3.out",
-						clipPath: "inset(0 100% 0 0)",
-					},
-					"-=1"
-				)
-				.from(
-					".cta-button",
-					{
-						opacity: 0,
-						scale: 0.8,
-						duration: 1,
-						ease: "elastic.out(1, 0.5)",
-					},
-					"-=0.5"
-				);
-
-			// Play timeline after a short delay
-			setTimeout(() => tl.play(), 300);
-
-			// Cleanup
 			return () => {
-				window.removeEventListener("click", handleClick);
 				window.removeEventListener("resize", handleResize);
-				if (containerRef.current && rendererRef.current) {
-					containerRef.current.removeChild(rendererRef.current.domElement);
-				}
-				// Dispose of Three.js resources
-				spheresRef.current.forEach((sphere) => {
-					sphere.geometry.dispose();
-					(sphere.material as THREE.Material).dispose();
-				});
-				rendererRef.current?.dispose();
+				window.removeEventListener("click", handleClick);
 			};
 		}
 	}, []);
 
 	return (
 		<div className="relative w-full h-screen overflow-hidden">
-			<div ref={containerRef} className="absolute inset-0 z-20" />
-			<div className="absolute inset-0 z-10 bg-gradient-to-br from-purple-600/20 via-pink-500/20 to-blue-600/20" />
-			<div className="relative z-30 flex flex-col items-center justify-center h-full text-center px-4 hover:scale-105 transition-transform duration-500">
-				{mounted && (
-					<>
-						<div className="mb-6 hero-title">
-							<TrueFocus
-								sentence="Dimensions ARE 4"
-								manualMode={false} // Changed to false to enable automatic animation
-								blurAmount={3}
-								borderColor="#8b5cf6"
-								glowColor="rgba(139, 92, 246, 0.6)"
-								animationDuration={0.3}
-								pauseBetweenAnimations={1.5}
-							/>
-						</div>
-						<p className="hero-subtitle text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl hover:text-white transition-colors duration-300">
-							Experience the future of technology through immersive 3D
-							visualizations and cutting-edge innovations
-						</p>
-						<button className="cta-button px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-full text-white font-semibold text-lg hover:scale-110 hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform">
-							Explore Now
-						</button>
-					</>
-				)}
+			<div ref={containerRef} className="absolute inset-0" />
+			<div className="relative z-10 flex items-center justify-center h-full">
+				<div className="text-center">
+					<TrueFocus
+						sentence="Welcome to Dimensions"
+						manualMode={false}
+						blurAmount={3}
+						borderColor="#00FFFF"
+						glowColor="rgba(0, 255, 255, 0.6)"
+					/>
+					<p className="mt-6 text-xl text-gray-300 max-w-2xl mx-auto px-4">
+						Experience the future of technology at our premier tech festival
+					</p>
+				</div>
 			</div>
 		</div>
 	);

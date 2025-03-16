@@ -62,20 +62,21 @@ const TrueFocus = ({
 			clearInterval(animationRef.current);
 			animationRef.current = null;
 		}
-
+	
 		// Set up animation if not in manual mode
 		if (!manualMode) {
 			// Update focus rect immediately
-			setTimeout(updateFocusRect, 50);
+			requestAnimationFrame(updateFocusRect);
 			
 			animationRef.current = setInterval(() => {
 				setCurrentIndex((prev) => (prev + 1) % words.length);
+				requestAnimationFrame(updateFocusRect);
 			}, (animationDuration + pauseBetweenAnimations) * 1000);
 		} else {
 			// In manual mode, just update focus rect for the current word
-			setTimeout(updateFocusRect, 50);
+			requestAnimationFrame(updateFocusRect);
 		}
-
+	
 		return () => {
 			if (animationRef.current) {
 				clearInterval(animationRef.current);
@@ -88,10 +89,10 @@ const TrueFocus = ({
 		words.length,
 		updateFocusRect,
 	]);
-
+	
 	// Update focus rect when the current index changes
 	useEffect(() => {
-		setTimeout(updateFocusRect, 10);
+		requestAnimationFrame(updateFocusRect);
 	}, [currentIndex, updateFocusRect]);
 	
 	// Handle resize events
@@ -129,7 +130,7 @@ const TrueFocus = ({
 						ref={(el) => {
 							wordRefs.current[index] = el;
 						}}
-						className="relative text-[5rem]  font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 mr-4"
+						className="relative text-[5rem] font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#00FFFF] via-[#4169E1] to-[#00FFFF] mr-4"
 						style={{
 							filter: `blur(${isActive ? 0 : blurAmount}px)`,
 							transition: `filter ${animationDuration}s ease`,
@@ -180,8 +181,8 @@ const TrueFocus = ({
 				<span
 					className="absolute w-4 h-4 border-[3px] rounded-[3px] bottom-[-10px] right-[-10px] border-l-0 border-t-0"
 					style={{
-						borderColor: borderColor,
-						filter: `drop-shadow(0 0 4px ${glowColor})`,
+						borderColor: "#00FFFF",
+						filter: `drop-shadow(0 0 4px rgba(0, 255, 255, 0.6))`,
 					}}
 				/>
 			</motion.div>
