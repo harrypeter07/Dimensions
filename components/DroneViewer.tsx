@@ -255,13 +255,13 @@ export default function DroneViewer({
 
 				{showGrid && <gridHelper args={[10, 10]} />}
 				<OrbitControls
-					enableZoom={false}
-					enableRotate={true}
-					minPolarAngle={Math.PI / 2}
-					maxPolarAngle={Math.PI / 2}
-					minAzimuthAngle={-Infinity}
-					maxAzimuthAngle={Infinity}
-				/>
+  enableZoom={false}
+  enableRotate={true}
+  minPolarAngle={Math.PI / 2 - 0.3} // Allow some upward rotation
+  maxPolarAngle={Math.PI / 2 + 0.3} // Allow some downward rotation
+  minAzimuthAngle={-Infinity}
+  maxAzimuthAngle={Infinity}
+/>
 			</Canvas>
 		</div>
 	);
