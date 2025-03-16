@@ -53,7 +53,7 @@ const ScrollBall = () => {
 			shininess: 150,
 			specular: 0xffffff,
 			emissive: 0x4ecdc4,
-			emissiveIntensity: 0.2,
+			emissiveIntensity: 3.2,
 		});
 		ballRef.current = new THREE.Mesh(geometry, material);
 		sceneRef.current.add(ballRef.current);
@@ -90,7 +90,9 @@ const ScrollBall = () => {
 				trigger: document.body,
 				start: "top top",
 				end: "bottom bottom",
-				scrub: 0.5,
+				scrub: 5.5,
+				
+				
 				onUpdate: (self) => {
 					if (ballRef.current) {
 						// Change color based on scroll position

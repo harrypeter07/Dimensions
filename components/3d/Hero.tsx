@@ -41,13 +41,13 @@ const Hero = () => {
   return (
     <div className="relative">
       <AnimatedHero />
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">
+      <div className="px-6 py-20 mx-auto max-w-7xl">
+        <h2 className="mb-12 text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
           Powerful Features
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
           {features.map((feature, index) => (
-            <ContentCard key={index} {...feature} />
+            <ContentCard   colors='#42ff6b ,#1c84e6,#edf3f7' key={index} {...feature} />
           ))}
         </div>
       </div>

@@ -77,14 +77,14 @@ const ShopPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white py-20 px-4 sm:px-6 lg:px-8">
+    <div className="px-4 py-20 min-h-screen text-white bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto"
+        className="mx-auto max-w-7xl"
       >
-        <div className="text-center mb-16">
+        <div className="mb-16 text-center">
           <TrueFocus
             sentence="Official Merchandise"
             manualMode={true}
@@ -92,13 +92,13 @@ const ShopPage = () => {
             borderColor="#6366f1"
             glowColor="rgba(99, 102, 241, 0.6)"
           />
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-8">
+          <p className="mx-auto mt-8 max-w-3xl text-lg text-gray-300 md:text-xl">
             Take home a piece of Dimensions 2024 with our exclusive merchandise collection.
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+        <div className="flex flex-wrap gap-4 justify-center mb-12">
           {categories.map((category) => (
             <motion.button
               key={category.id}
@@ -116,7 +116,7 @@ const ShopPage = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((product, index) => (
             <motion.div
               key={product.id}
@@ -136,7 +136,7 @@ const ShopPage = () => {
                       {product.features.map((feature, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-1 bg-purple-600/20 text-purple-400 rounded-full text-xs"
+                          className="px-2 py-1 text-xs text-purple-400 rounded-full bg-purple-600/20"
                         >
                           {feature}
                         </span>
@@ -145,7 +145,7 @@ const ShopPage = () => {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300"
+                      className="px-4 py-2 mt-4 w-full font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30"
                     >
                       Add to Cart
                     </motion.button>
@@ -163,23 +163,23 @@ const ShopPage = () => {
           transition={{ delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+          <h2 className="mb-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 md:text-4xl">
             Shipping Information
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="mx-auto mb-8 max-w-3xl text-lg text-gray-300">
             Free shipping on orders over $100. All merchandise will be available for pickup at the event or shipped to your location.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-2">Secure Payment</h3>
+          <div className="grid grid-cols-1 gap-8 mx-auto max-w-4xl md:grid-cols-3">
+            <div className="p-6 rounded-xl backdrop-blur-lg bg-white/5">
+              <h3 className="mb-2 text-xl font-semibold">Secure Payment</h3>
               <p className="text-gray-400">All transactions are encrypted and secure</p>
             </div>
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-2">Fast Shipping</h3>
+            <div className="p-6 rounded-xl backdrop-blur-lg bg-white/5">
+              <h3 className="mb-2 text-xl font-semibold">Fast Shipping</h3>
               <p className="text-gray-400">2-5 business days delivery worldwide</p>
             </div>
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-2">Easy Returns</h3>
+            <div className="p-6 rounded-xl backdrop-blur-lg bg-white/5">
+              <h3 className="mb-2 text-xl font-semibold">Easy Returns</h3>
               <p className="text-gray-400">30-day return policy for unused items</p>
             </div>
           </div>
