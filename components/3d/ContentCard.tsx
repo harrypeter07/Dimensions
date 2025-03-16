@@ -113,33 +113,33 @@ const ContentCard = ({
 				transformStyle: "preserve-3d",
 			}}
 		>
-			<div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-blue-600/10 backdrop-blur-sm" />
+			<div className="absolute inset-0 bg-gradient-to-br backdrop-blur-sm from-purple-600/10 to-blue-600/10" />
 			<motion.div
 				className="relative z-10"
 				style={{ transformStyle: "preserve-3d", transform: "translateZ(20px)" }}
 			>
 				{icon && (
 					<motion.div
-						className="w-12 h-12 mb-4 text-purple-600"
+						className="mb-4 w-12 h-12 text-purple-600"
 						whileHover={{ scale: 1.1 }}
 						style={{ transform: "translateZ(30px)" }}
 					>
 						<img
 							src={icon}
 							alt={title}
-							className="w-full h-full object-contain"
+							className="object-contain w-full h-full"
 						/>
 					</motion.div>
 				)}
 				<motion.h3
-					className="text-2xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600"
+					className="mb-3 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600"
 					whileHover={{ scale: 1.05 }}
 					style={{ transform: "translateZ(25px)" }}
 				>
 					{title}
 				</motion.h3>
 				<p 
-					className="text-gray-600 dark:text-gray-300 leading-relaxed"
+					className="leading-relaxed text-gray-600 dark:text-gray-300"
 					style={{ transform: "translateZ(15px)" }}
 				>
 					{description}
@@ -148,7 +148,7 @@ const ContentCard = ({
 
 			{showTooltip && (
 				<motion.div
-					className="pointer-events-none absolute left-0 top-0 rounded-[4px] bg-white px-[10px] py-[4px] text-[10px] text-[#2d2d2d] opacity-0 z-[3] hidden sm:block"
+					className="pointer-events-none absolute left-0 top-0 rounded-[4px] bg-white px-[10px] py-[5px] text-[10px] text-[#2d2d2d] opacity-0 z-[3] hidden sm:block"
 					style={{
 						x,
 						y,
