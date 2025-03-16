@@ -177,7 +177,7 @@ export default function DroneViewer({
 			style={{
 				zIndex: 80,
 				background: "transparent",
-				height: isMobile ? "50%" : "50%",
+				height: isMobile ? "30%" : "50%",
 				width: isMobile ? "50%" : "70%",
 				top: isMobile ? "5%" : "5%",
 				right: isMobile ? "1%" : "-16%",
@@ -233,7 +233,7 @@ export default function DroneViewer({
 							/>
 
 							{/* Enhanced drone with lighting effects */}
-							<EnhancedDrone scale={isMobile ? 0.2 : 0.65} />
+							<EnhancedDrone scale={isMobile ? 0.35 : 0.65} />
 
 							{/* Environment for reflections */}
 							<Environment preset="sunset" background={false} />

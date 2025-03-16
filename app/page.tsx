@@ -9,6 +9,7 @@ import ChatBot from '@/components/ui/ChatBot';
 import Timeline from '@/components/3d/Timeline';
 import ZoomParallax from '@/components/ZoomParallax'; // Import the ZoomParallax component
 import ScrollAnimation from '@/components/ScrollAnimation';
+import RobotContainer from '@/components/RobotContainer';
 
 export default function HomePage() {
   // Add the Lenis smooth scroll initialization
@@ -35,6 +36,7 @@ export default function HomePage() {
       <Hero />
       <ScrollAnimation/>
       <Timeline />
+      <RobotContainer/>
       
       {/* Add the ZoomParallax component where you want it */}
       <ZoomParallax />
