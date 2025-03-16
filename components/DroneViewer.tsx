@@ -177,7 +177,7 @@ export default function DroneViewer({
 			style={{
 				zIndex: 80,
 				background: "transparent",
-				height: isMobile ? "100%" : "50%",
+				height: isMobile ? "50%" : "50%",
 				width: isMobile ? "50%" : "70%",
 				top: isMobile ? "5%" : "5%",
 				right: isMobile ? "1%" : "-16%",
