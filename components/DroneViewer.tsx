@@ -178,9 +178,9 @@ export default function DroneViewer({
 				zIndex: 80,
 				background: "transparent",
 				height: isMobile ? "30%" : "50%",
-				width: isMobile ? "50%" : "70%",
+				width: isMobile ? "50%" : "50%",
 				top: isMobile ? "5%" : "5%",
-				right: isMobile ? "1%" : "-16%",
+				right: isMobile ? "1%" : "-0%",
 				willChange: "transform",
 				transform: "translate3d(0, 0, 0)",
 			}}

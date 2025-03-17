@@ -12,16 +12,20 @@ export function Drone({ scale = 1, castShadow = true, ...props }) {
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
   const { actions } = useAnimations(animations, group);
-  
+  console.log(actions)
   useEffect(() => {
     // Set up the drone's propeller animations
     const mainAction = actions['Armature|Empty.001Action'];
     const secondAction = actions['Armature|Empty.002Action'];
-    
+    const thirdAction = actions['Armature|Empty.004Action'];
+    const fourthAction = actions['Armature|Empty.006Action'];
+
+    // thirdAction.play();
+    fourthAction.play();
     if (mainAction) mainAction.play();
     if (secondAction) {
       secondAction.play();
-      secondAction.timeScale = 0.5; // slow down the propeller animation
+      secondAction.timeScale = 0.005; // slow down the propeller animation
     }
     
     return () => {

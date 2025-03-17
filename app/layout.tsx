@@ -4,6 +4,9 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 // import ScrollBall from "@/components/3d/ScrollBall";
 import DroneViewer from "@/components/DroneViewer";
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+
 
 const roboto = Roboto({
 	variable: "--font-roboto",
@@ -30,7 +33,9 @@ export default function RootLayout({
 						modelPath="/models/drone.glb"
 						scrollDelay={2}
 					/>
+					<Navbar />
 					{children}
+					<Footer />
 				</ThemeProvider>
 			</body>
 		</html>
