@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Timeline from "@/components/3d/Timeline";
 import ChatBot from "@/components/ui/ChatBot";
@@ -11,10 +10,10 @@ import TrueFocus from "@/components/3d/TrueFocus";
 export default function EventsPage() {
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-[#0A0F1C] via-[#1A1F3C] to-[#2A2F4C] text-white">
-			<Navbar />
+		
 			<div className="pt-24 pb-16">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
+				<div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+					<div className="mb-16 text-center">
 						<TrueFocus
 							sentence="Upcoming Events"
 							manualMode={true}
@@ -22,7 +21,7 @@ export default function EventsPage() {
 							borderColor="#6366f1"
 							glowColor="rgba(99, 102, 241, 0.6)"
 						/>
-						<p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-8">
+						<p className="max-w-3xl mx-auto mt-8 text-lg text-gray-300 md:text-xl">
 							Join us for exciting tech events and workshops throughout the
 							year.
 						</p>
@@ -32,7 +31,7 @@ export default function EventsPage() {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 0.8 }}
-						className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
+						className="grid grid-cols-1 gap-8 mb-16 md:grid-cols-2"
 					>
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
@@ -48,7 +47,7 @@ export default function EventsPage() {
 									<h3 className="text-xl font-semibold text-white">
 										Tech Conference 2024
 									</h3>
-									<p className="text-gray-300 mt-2">
+									<p className="mt-2 text-gray-300">
 										Join us for an exciting tech conference!
 									</p>
 									<p className="text-sm text-[#00FFFF] mt-2">
@@ -72,7 +71,7 @@ export default function EventsPage() {
 									<h3 className="text-xl font-semibold text-white">
 										Workshop 2023
 									</h3>
-									<p className="text-gray-300 mt-2">
+									<p className="mt-2 text-gray-300">
 										A successful workshop on emerging technologies.
 									</p>
 									<p className="text-sm text-[#00FFFF] mt-2">

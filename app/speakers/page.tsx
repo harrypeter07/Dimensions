@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Navbar from '@/components/layout/Navbar';
 import SpeakerCard from '@/components/3d/SpeakerCard';
 import ChatBot from '@/components/ui/ChatBot';
 
@@ -29,7 +28,7 @@ export default function SpeakersPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Navbar />
+      
       <div className="pt-24 pb-16">
         <div className="px-4 mx-auto max-w-7xl">
           <h1 className="mb-12 text-4xl font-bold text-center">Our Speakers</h1>
