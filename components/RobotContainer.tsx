@@ -38,26 +38,30 @@ const RobotContainer: React.FC = () => {
 
 	useEffect(() => {
 		try {
-			if (robotRef.current) {
-				const { actions } = robotRef.current;
-
-				if (actions?.Scene) {
-					actions.Scene.reset().play();
-					setIsAnimating(true);
-					setError(null);
-				} else {
-					setError("Animation not found");
-				}
-			}
+		  if (robotRef.current && robotRef.current.actions) {
+			const { actions } = robotRef.current;
+			
+			// Add a small delay to ensure the actions are ready
+			setTimeout(() => {
+			  if (actions?.Scene) {
+				actions.Scene.reset();
+				actions.Scene.play();
+				setIsAnimating(true);
+				setError(null);
+			  } else {
+				setError("Animation not found");
+			  }
+			}, 100);
+		  }
 		} catch (err) {
-			setError(
-				`Failed to start animation: ${
-					err instanceof Error ? err.message : "Unknown error"
-				}`
-			);
-			console.error("Animation error:", err);
+		  setError(
+			`Failed to start animation: ${
+			  err instanceof Error ? err.message : "Unknown error"
+			}`
+		  );
+		  console.error("Animation error:", err);
 		}
-	}, [robotRef.current]);
+	  }, []); 
 
 	return (
 		<div
@@ -80,7 +84,7 @@ const RobotContainer: React.FC = () => {
 					/>
 
 					{/* Robot with ref to access animations */}
-					<Robot ref={robotRef} position={[0, 1, 0]} />
+					<Robot ref={robotRef} />
 				</Suspense>
 
 				{/* OrbitControls with up/down movement */}
