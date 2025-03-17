@@ -6,6 +6,7 @@ import "./globals.css";
 import DroneViewer from "@/components/DroneViewer";
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { DroneProvider } from "@/components/DroneContext";
 
 
 const roboto = Roboto({
@@ -29,10 +30,13 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<body className={` ${roboto.variable} antialiased`}>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<DroneViewer
+					<DroneProvider>
+
+					   <DroneViewer
 						modelPath="/models/drone.glb"
 						scrollDelay={2}
-					/>
+						/>
+						</DroneProvider>
 					<Navbar />
 					{children}
 					<Footer />

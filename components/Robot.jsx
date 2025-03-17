@@ -5,8 +5,7 @@ export const Model = forwardRef((props, ref) => {
 	const group = useRef();
 	const { nodes, materials, animations } = useGLTF("/models/robot.glb");
 	const { actions } = useAnimations(animations, group);
-console.log("sct",actions)
-console.log("arr" ,actions[0])
+console.log("actions",actions)
 	// Expose actions to parent via ref
 	useImperativeHandle(ref, () => ({
 		actions,
