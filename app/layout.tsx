@@ -34,7 +34,7 @@ export default function RootLayout({
 
 					   <DroneViewer
 						modelPath="/models/drone.glb"
-						scrollDelay={2}
+					
 						/>
 						</DroneProvider>
 					<Navbar />
