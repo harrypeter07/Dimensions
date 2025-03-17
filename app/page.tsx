@@ -8,6 +8,7 @@ import Timeline from '@/components/3d/Timeline';
 import ZoomParallax from '@/components/ZoomParallax'; // Import the ZoomParallax component
 import ScrollAnimation from '@/components/ScrollAnimation';
 import RobotContainer from '@/components/RobotContainer';
+// import DroneControls from '@/components/DroneControls';
 
 export default function HomePage() {
   // Add the Lenis smooth scroll initialization
@@ -35,6 +36,8 @@ export default function HomePage() {
       <ScrollAnimation/>
       <Timeline />
       <RobotContainer/>
+     
+      
       
       {/* Add the ZoomParallax component where you want it */}
       <ZoomParallax />

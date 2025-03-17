@@ -36,10 +36,10 @@ export default function RootLayout({
 						modelPath="/models/drone.glb"
 					
 						/>
-						</DroneProvider>
 					<Navbar />
 					{children}
 					<Footer />
+						</DroneProvider>
 				</ThemeProvider>
 			</body>
 		</html>

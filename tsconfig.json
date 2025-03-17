@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/InfiniteMenu.jsx", "components/3d/ContentCard.tsx", "components/Robot.jsx", "components/Platform.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/InfiniteMenu.jsx", "components/3d/ContentCard.tsx", "components/Robot.tsx", "components/Platform.jsx"],
   "exclude": ["node_modules"]
 }

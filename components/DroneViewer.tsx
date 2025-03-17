@@ -78,7 +78,7 @@ export default function DroneViewer({
         top: canvasPosition.top,
         right: canvasPosition.right,
         willChange: "transform",
-        transform: "translate3d(0, 0, 0)",
+        // transform: "translate3d(0, 0, 0)",
       }}
     >
       <Canvas

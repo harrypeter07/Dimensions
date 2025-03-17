@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
 import SpeakerCard from '@/components/3d/SpeakerCard';
 import ChatBot from '@/components/ui/ChatBot';
 
@@ -32,9 +31,9 @@ export default function SpeakersPage() {
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Navbar />
       <div className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-12">Our Speakers</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="px-4 mx-auto max-w-7xl">
+          <h1 className="mb-12 text-4xl font-bold text-center">Our Speakers</h1>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {speakers.map((speaker, index) => (
               <SpeakerCard key={index} {...speaker} />
             ))}
@@ -42,7 +41,7 @@ export default function SpeakersPage() {
         </div>
       </div>
       <ChatBot />
-      <Footer />
+   
     </div>
   );
 }
