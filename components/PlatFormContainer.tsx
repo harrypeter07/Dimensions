@@ -61,7 +61,7 @@ const PlatformContainer: React.FC<PlatformContainerProps> = ({
       <Canvas
         shadows
         camera={{ position: cameraPosition, fov: 45 }}
-        style={{ background: {backgroundColor}, position: 'absolute' , scale: '1' }}
+        style={{ background: 'transparent', position: 'absolute' , scale: '1' }}
         gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true }}
         onCreated={({ gl, scene }) => {
           gl.setClearColor(0x000000, 0);
