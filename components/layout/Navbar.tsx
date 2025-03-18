@@ -21,7 +21,7 @@
 //       className="fixed z-50 w-full shadow-lg backdrop-blur-md bg-white/80 dark:bg-gray-900/80"
 //     >
 //       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-//         <div className="flex items-center justify-between h-16">
+//         <div className="flex justify-between items-center h-16">
 //           <div className="flex items-center">
 //             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 //               <Link href="/" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 dark:from-purple-400 dark:to-blue-400">
@@ -31,7 +31,7 @@
 //           </div>
 
 //           {/* Desktop Navigation */}
-//           <div className="items-center hidden space-x-8 md:flex">
+//           <div className="hidden items-center space-x-8 md:flex">
 //             <motion.div className="flex items-center space-x-6" initial={false}>
 //               {[
 //                 { href: "/", label: "Home" },
@@ -59,7 +59,7 @@
 //                 whileHover={{ y: -2, scale: 1.05 }}
 //                 whileTap={{ scale: 0.95 }}
 //                 onClick={toggleTheme}
-//                 className="p-2 text-gray-700 transition-colors duration-300 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+//                 className="p-2 text-gray-700 bg-gray-100 rounded-full transition-colors duration-300 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
 //               >
 //                 {theme === "dark" ? (
 //                   <FaSun className="w-5 h-5" />
@@ -108,7 +108,7 @@
 //             initial={{ opacity: 0, y: -20 }}
 //             animate={{ opacity: 1, y: 0 }}
 //             exit={{ opacity: 0, y: -20 }}
-//             className="bg-white shadow-lg rounded-b-2xl md:hidden dark:bg-gray-900"
+//             className="bg-white rounded-b-2xl shadow-lg md:hidden dark:bg-gray-900"
 //           >
 //             <div className="px-2 pt-2 pb-3 space-y-1">
 //               {[
@@ -122,7 +122,7 @@
 //                 <Link
 //                   key={link.href}
 //                   href={link.href}
-//                   className="block px-3 py-2 text-base font-medium text-gray-700 transition-colors duration-300 rounded-md dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+//                   className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md transition-colors duration-300 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800"
 //                 >
 //                   {link.label}
 //                 </Link>
@@ -439,8 +439,8 @@ const GooeyNavEffect: React.FC<GooeyNavEffectProps> = ({
           z-index: -1;
         }
       `}</style>
-      <div className="relative " ref={containerRef}>
-        <nav className="relative flex" style={{ transform: "translate3d(0,0,0.01px)" }}>
+      <div className="relative" ref={containerRef}>
+        <nav className="flex relative" style={{ transform: "translate3d(0,0,0.01px)" }}>
           <ul
             ref={navRef}
             className="flex gap-8 list-none p-0 px-4 m-0 relative z-[3] gooey-nav"
@@ -468,7 +468,7 @@ const GooeyNavEffect: React.FC<GooeyNavEffectProps> = ({
             ))}
           </ul>
         </nav>
-        <span className="effect filter" ref={filterRef} />
+        <span className="filter effect" ref={filterRef} />
         <span className="effect text" ref={textRef} />
       </div>
     </>
@@ -489,7 +489,7 @@ const Navbar = () => {
     { label: "About", href: "/about" },
     { label: "Events", href: "/events" },
     { label: "Speakers", href: "/speakers" },
-    { label: "Infinite", href: "/infinitemenu" },
+    { label: "Legends", href: "/infinitemenu" },
   ];
 
   return (
@@ -497,10 +497,10 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed z-50 w-full p-3 shadow-lg backdrop-blur-md bg-gray-900/80 dark:bg-gray-900/80"
+      className="fixed z-50 p-3 w-full shadow-lg backdrop-blur-md bg-gray-900/80 dark:bg-gray-900/80"
     >
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link href="/" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 dark:from-purple-400 dark:to-blue-400">
@@ -510,7 +510,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation with Gooey Effect */}
-          <div className="items-center hidden md:flex">
+          <div className="hidden items-center md:flex">
             <div className="flex items-center space-x-6">
               <GooeyNavEffect
                 items={navItems}
@@ -525,7 +525,7 @@ const Navbar = () => {
                 whileHover={{ y: -2, scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleTheme}
-                className="p-2 ml-4 text-gray-700 transition-colors duration-300 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="p-2 ml-4 text-gray-700 bg-gray-100 rounded-full transition-colors duration-300 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
               >
                 {theme === "dark" ? (
                   <FaSun className="w-5 h-5" />
@@ -574,14 +574,14 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="bg-white shadow-lg rounded-b-2xl md:hidden dark:bg-gray-900"
+            className="bg-white rounded-b-2xl shadow-lg md:hidden dark:bg-gray-900"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 transition-colors duration-300 rounded-md dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md transition-colors duration-300 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   {link.label}
                 </Link>

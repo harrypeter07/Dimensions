@@ -29,9 +29,9 @@ const contentStyles = {
 
 const content = [
   {
-    title: "Collaborative Editing",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+    title: "AI & Machine Learning Workshop",
+		description:
+			"Dive deep into the world of artificial intelligence and machine learning. Learn from expert practitioners, get hands-on experience with cutting-edge tools, and discover how AI is transforming industries across the globe.",
     content: (
       <div style={contentStyles.gradientCyanEmerald}>
         <Image
@@ -39,15 +39,15 @@ const content = [
           width={800}
           height={300}
           className="object-cover"
-          alt="Real-time Changes"
+          alt="img"
         />
       </div>
     ),
   },
   {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+    title: "Startup Pitch Competition",
+		description:
+			"Watch innovative startups pitch their groundbreaking ideas to top investors. Experience the excitement as entrepreneurs compete for funding and mentorship opportunities. Network with founders and investors shaping the future.",
     content: (
       <div style={{
         height: "100%",
@@ -68,9 +68,9 @@ const content = [
     ),
   },
   {
-    title: "Version control",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the lerience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most ree updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the lerience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    title: "Web3 & Blockchain Forum",
+		description:
+			"Explore the decentralized future with our comprehensive Web3 and blockchain forum. Learn about cryptocurrency, NFTs, DeFi, and the revolutionary potential of blockchain technology from industry pioneers.",
     content: (
       <div style={contentStyles.gradientOrangeYellow} >
          <Image
@@ -84,9 +84,9 @@ const content = [
     ),
   },
   {
-    title: "Running out of content",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    title: "Gaming & Esports Festival",
+		description:
+			"Experience the ultimate gaming celebration! Compete in tournaments, try the latest VR/AR games, meet professional gamers, and explore the future of interactive entertainment. Perfect for gamers and tech enthusiasts alike.",
     content: (
       <div style={contentStyles.gradientCyanEmerald}>
          <Image

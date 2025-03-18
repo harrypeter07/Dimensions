@@ -13,7 +13,7 @@ const cn = (...inputs: string[]): string => {
 
 const LogoHoverEffect: React.FC<LogoHoverEffectProps> = ({ 
   text, 
-  fontSize = "102px" 
+  fontSize = "80px" 
 }) => {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [cursor, setCursor] = useState<{ x: number | null; y: number | null }>({ x: 0, y: 0 });

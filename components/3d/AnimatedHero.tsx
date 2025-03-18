@@ -72,7 +72,11 @@ const AnimatedHero = () => {
             borderColor="#00FFFF"
             glowColor="rgba(0, 255, 255, 0.6)"
           />
-          <LogoHoverEffect text="AXIS 25"/>
+          <div>
+            
+          
+          <LogoHoverEffect text="AXIS 25" />
+          </div>
           <p className="px-4 mx-auto mt-6 max-w-2xl text-xl text-gray-300">
             Experience the future of technology at our premier tech festival
           </p>
