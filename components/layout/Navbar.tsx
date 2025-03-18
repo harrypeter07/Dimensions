@@ -25,7 +25,7 @@
 //           <div className="flex items-center">
 //             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 //               <Link href="/" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 dark:from-purple-400 dark:to-blue-400">
-//                 Dimensions
+//                 AXIS 25
 //               </Link>
 //             </motion.div>
 //           </div>
@@ -528,7 +528,7 @@ const Navbar = () => {
 					<div className="flex items-center">
 						<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 							<Link href="/" className="text-2xl font-bold">
-								<LogoHoverEffect text="DIMENSIONS" fontSize="24px" />
+								<LogoHoverEffect text="AXIS 25" fontSize="24px" />
 							</Link>
 						</motion.div>
 					</div>

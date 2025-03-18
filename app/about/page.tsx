@@ -25,13 +25,13 @@ const AboutPage = () => {
 		{
 			title: "Origins",
 			description:
-				"Founded in 2024, Dimensions emerged from a vision to create a unique space where technology meets creativity. What started as a small gathering of tech enthusiasts has evolved into a premier technology festival.",
+				"Founded in 2024, AXIS 25 emerged from a vision to create a unique space where technology meets creativity. What started as a small gathering of tech enthusiasts has evolved into a premier technology festival.",
 			icon: "/file.svg",
 		},
 		{
 			title: "Evolution",
 			description:
-				"Over the years, we have grown to incorporate cutting-edge technologies, innovative workshops, and world-class speakers, making Dimensions a must-attend event in the tech community.",
+				"Over the years, we have grown to incorporate cutting-edge technologies, innovative workshops, and world-class speakers, making AXIS 25 a must-attend event in the tech community.",
 			icon: "/window.svg",
 		},
 	];
@@ -114,14 +114,14 @@ const AboutPage = () => {
 			>
 				<div className="mb-16 text-center">
 					<TrueFocus
-						sentence="ABOUT DIMENSIONS 2024"
+						sentence="ABOUT AXIS 25"
 						manualMode={false}
 						blurAmount={6}
 						borderColor="#6366f1"
 						glowColor="rgba(99, 102, 241, 0.6)"
 					/>
 					<p className="mx-auto mt-8 max-w-3xl text-lg text-gray-300 md:text-xl">
-						Dimensions is more than just a tech festival - it s a gateway to the
+						AXIS 25 is more than just a tech festival - it s a gateway to the
 						future of technology and innovation.
 					</p>
 				</div>
@@ -133,11 +133,11 @@ const AboutPage = () => {
 					</h2>
 					<div className="p-8 rounded-xl shadow-xl backdrop-blur-lg bg-white/5">
 						<p className="text-lg leading-relaxed text-gray-300">
-							Dimensions 2024 brings together the brightest minds in technology
-							for three days of innovation, learning, and collaboration.
-							Experience cutting-edge demonstrations, engage in hands-on
-							workshops, and connect with industry leaders who are shaping the
-							future of technology.
+							AXIS 25 brings together the brightest minds in technology for
+							three days of innovation, learning, and collaboration. Experience
+							cutting-edge demonstrations, engage in hands-on workshops, and
+							connect with industry leaders who are shaping the future of
+							technology.
 						</p>
 					</div>
 				</div>

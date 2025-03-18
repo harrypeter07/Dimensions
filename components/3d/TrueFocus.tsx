@@ -14,7 +14,7 @@ interface TrueFocusProps {
 }
 
 const TrueFocus = ({
-	sentence = "Dimensions  ARE  4",
+	sentence = "AXIS 25  ARE  4",
 	manualMode = false,
 	blurAmount = 5,
 	borderColor = "#6366f1",
@@ -56,18 +56,18 @@ const TrueFocus = ({
 	useEffect(() => {
 		// Initialize wordRefs array
 		wordRefs.current = wordRefs.current.slice(0, words.length);
-		
+
 		// Clear any existing animation
 		if (animationRef.current) {
 			clearInterval(animationRef.current);
 			animationRef.current = null;
 		}
-	
+
 		// Set up animation if not in manual mode
 		if (!manualMode) {
 			// Update focus rect immediately
 			requestAnimationFrame(updateFocusRect);
-			
+
 			animationRef.current = setInterval(() => {
 				setCurrentIndex((prev) => (prev + 1) % words.length);
 				requestAnimationFrame(updateFocusRect);
@@ -76,7 +76,7 @@ const TrueFocus = ({
 			// In manual mode, just update focus rect for the current word
 			requestAnimationFrame(updateFocusRect);
 		}
-	
+
 		return () => {
 			if (animationRef.current) {
 				clearInterval(animationRef.current);
@@ -89,12 +89,12 @@ const TrueFocus = ({
 		words.length,
 		updateFocusRect,
 	]);
-	
+
 	// Update focus rect when the current index changes
 	useEffect(() => {
 		requestAnimationFrame(updateFocusRect);
 	}, [currentIndex, updateFocusRect]);
-	
+
 	// Handle resize events
 	useEffect(() => {
 		window.addEventListener("resize", updateFocusRect);

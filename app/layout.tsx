@@ -16,7 +16,7 @@ const anton = Anton({
 });
 
 export const metadata: Metadata = {
-	title: "Dimensions - Tech Festival",
+	title: "AXIS 25 - Tech Festival",
 	description:
 		"Experience the future of technology at our premier tech festival",
 };
@@ -50,9 +50,9 @@ export default function RootLayout({
 
 						<Navbar />
 						{children}
-						<Footer />
 					</DroneProvider>
 				</ThemeProvider>
+						<Footer />
 			</body>
 		</html>
 	);
