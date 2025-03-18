@@ -51,7 +51,7 @@ interface PlatformContainerProps {
 }
 
 const PlatformContainer: React.FC<PlatformContainerProps> = ({
-  backgroundColor = 'transparent',
+//   backgroundColor = 'transparent',
   ambientLightIntensity = 0.1,
   cameraPosition = [10, 10, -10],
   children
