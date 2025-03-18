@@ -29,7 +29,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body
-				className={` ${anton.variable} font-anton antialiased relative min-h-screen`}
+				className={` ${anton.variable} font-anton antialiased relative min-h-screen flex flex-col`}
 			>
 				<div className="fixed inset-0 w-full h-full pointer-events-none">
 					<ParticlesClient
@@ -49,10 +49,10 @@ export default function RootLayout({
 						<DroneViewer modelPath="/models/drone.glb" />
 
 						<Navbar />
-						{children}
+						<main className="flex-grow">{children}</main>
 					</DroneProvider>
 				</ThemeProvider>
-						<Footer />
+				<Footer />
 			</body>
 		</html>
 	);
