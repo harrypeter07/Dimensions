@@ -51,7 +51,7 @@ const AnimatedHero = () => {
       <div className="grid relative z-10 grid-cols-1 items-center h-full lg:grid-cols-2">
         {/* Left side - Robot and Platform */}
         <div className="flex flex-col items-center justify-center h-full mb-[25vh] ml-[-25vh]">
-          <div className="flex relative flex-col items-center w-3/4">
+          <div className="flex relative flex-col items-center w-3/4 max-sm:ml-6">
             {/* Robot positioned above platform */}
             <div className="w-full mb-[-90px]">
               <RobotContainer />

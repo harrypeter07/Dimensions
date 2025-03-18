@@ -35,7 +35,7 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed right-4 bottom-4 z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="bg-[#00FFFF] hover:bg-[#00FFFF]/80 dark:bg-[#4169E1] dark:hover:bg-[#4169E1]/80 text-gray-900 dark:text-white rounded-full p-4 shadow-lg transition-all duration-300 transform hover:scale-105"
@@ -46,12 +46,7 @@ const ChatBot = () => {
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-          />
+        
         </svg>
       </button>
 
@@ -60,7 +55,7 @@ const ChatBot = () => {
           <div className="p-4 border-b dark:border-gray-700 bg-gradient-to-r from-[#00FFFF]/10 to-[#4169E1]/10 dark:from-[#00FFFF]/5 dark:to-[#4169E1]/5">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Chat with us</h3>
           </div>
-          <div className="h-96 overflow-y-auto p-4 space-y-4">
+          <div className="overflow-y-auto p-4 space-y-4 h-96">
             {messages.map((message, index) => (
               <div
                 key={index}
