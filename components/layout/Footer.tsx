@@ -26,17 +26,17 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-800 shadow-md mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="z-50 mt-16 bg-white shadow-md dark:bg-gray-800">
+      <div className="px-4 py-12 mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
-            <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Dimensions</h3>
+            <h3 className="mb-4 text-xl font-bold text-gray-800 dark:text-white">Dimensions</h3>
             <p className="text-gray-600 dark:text-gray-300">
               Exploring the future of technology and innovation.
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Quick Links</h4>
+            <h4 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
@@ -56,15 +56,15 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Contact</h4>
+            <h4 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">Contact</h4>
             <p className="text-gray-600 dark:text-gray-300">
               Email: info@dimensions.com<br />
               Phone: +1 234 567 890
             </p>
           </div>
         </div>
-        <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
-          <div className="flex justify-center space-x-6 mb-6">
+        <div className="pt-8 mt-8 text-center border-t border-gray-200 dark:border-gray-700">
+          <div className="flex justify-center mb-6 space-x-6">
             {socialLinks.map((social, index) => {
               const Icon = social.icon;
               return (
@@ -75,9 +75,9 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   whileHover={{ y: -5, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
+                  className="text-gray-600 transition-colors duration-300 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400"
                 >
-                  <Icon className="h-6 w-6" />
+                  <Icon className="w-6 h-6" />
                 </motion.a>
               );
             })}

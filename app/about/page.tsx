@@ -114,13 +114,13 @@ const AboutPage = () => {
 			>
 				<div className="mb-16 text-center">
 					<TrueFocus
-						sentence="About Dimensions 2024"
+						sentence="ABOUT DIMENSIONS 2024"
 						manualMode={false}
 						blurAmount={6}
 						borderColor="#6366f1"
 						glowColor="rgba(99, 102, 241, 0.6)"
 					/>
-					<p className="max-w-3xl mx-auto mt-8 text-lg text-gray-300 md:text-xl">
+					<p className="mx-auto mt-8 max-w-3xl text-lg text-gray-300 md:text-xl">
 						Dimensions is more than just a tech festival - it s a gateway to the
 						future of technology and innovation.
 					</p>
@@ -128,10 +128,10 @@ const AboutPage = () => {
 
 				{/* Event Overview */}
 				<div className="mb-16">
-					<h2 className="mb-8 text-3xl font-bold text-center text-transparent md:text-4xl bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+					<h2 className="mb-8 text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 md:text-4xl">
 						Event Overview
 					</h2>
-					<div className="p-8 shadow-xl bg-white/5 backdrop-blur-lg rounded-xl">
+					<div className="p-8 rounded-xl shadow-xl backdrop-blur-lg bg-white/5">
 						<p className="text-lg leading-relaxed text-gray-300">
 							Dimensions 2024 brings together the brightest minds in technology
 							for three days of innovation, learning, and collaboration.
@@ -163,7 +163,7 @@ const AboutPage = () => {
 
 				{/* History/Concept */}
 				<div className="mb-16">
-					<h2 className="mb-8 text-3xl font-bold text-center text-transparent md:text-4xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+					<h2 className="mb-8 text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 md:text-4xl">
 						Our Journey
 					</h2>
 					<div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -187,7 +187,7 @@ const AboutPage = () => {
 
 				{/* Key Highlights */}
 				<div className="mb-16">
-					<h2 className="mb-8 text-3xl font-bold text-center text-transparent md:text-4xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+					<h2 className="mb-8 text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 md:text-4xl">
 						Key Highlights
 					</h2>
 					<div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -211,7 +211,7 @@ const AboutPage = () => {
 
 				{/* Event Timeline */}
 				<div className="mb-16">
-					<h2 className="mb-8 text-3xl font-bold text-center text-transparent md:text-4xl bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+					<h2 className="mb-8 text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 md:text-4xl">
 						Event Timeline
 					</h2>
 					<div className="space-y-8">
@@ -221,7 +221,7 @@ const AboutPage = () => {
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ delay: dayIndex * 0.2 }}
-								className="p-6 bg-white/5 backdrop-blur-lg rounded-xl"
+								className="p-6 rounded-xl backdrop-blur-lg bg-white/5"
 							>
 								<h3 className="mb-4 text-2xl font-bold text-purple-400">
 									{day.day}
@@ -233,7 +233,7 @@ const AboutPage = () => {
 											initial={{ opacity: 0 }}
 											animate={{ opacity: 1 }}
 											transition={{ delay: dayIndex * 0.2 + eventIndex * 0.1 }}
-											className="flex items-center p-4 space-x-4 transition-all duration-300 rounded-lg bg-white/5 hover:bg-white/10"
+											className="flex items-center p-4 space-x-4 rounded-lg transition-all duration-300 bg-white/5 hover:bg-white/10"
 										>
 											<div className="font-semibold text-purple-400">
 												{event.time}
@@ -260,10 +260,10 @@ const AboutPage = () => {
 					transition={{ delay: 0.8 }}
 					className="text-center"
 				>
-					<h2 className="mb-6 text-3xl font-bold text-transparent md:text-4xl bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+					<h2 className="mb-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 md:text-4xl">
 						Join the Revolution
 					</h2>
-					<p className="max-w-3xl mx-auto mb-8 text-lg text-gray-300">
+					<p className="mx-auto mb-8 max-w-3xl text-lg text-gray-300">
 						Be part of a community thats shaping the future of technology.
 						Experience innovation like never before.
 					</p>

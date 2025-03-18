@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Anton } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 // import ScrollBall from "@/components/3d/ScrollBall";
@@ -9,10 +9,10 @@ import Footer from "@/components/layout/Footer";
 import { DroneProvider } from "@/components/DroneContext";
 import ParticlesClient from "@/components/ParticlesClient";
 
-const roboto = Roboto({
-	variable: "--font-roboto",
+const anton = Anton({
+	variable: "--font-anton",
 	subsets: ["latin"],
-	weight: ["300", "400", "500", "700"],
+	weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={` ${roboto.variable} antialiased relative min-h-screen`}>
+			<body
+				className={` ${anton.variable} font-anton antialiased relative min-h-screen`}
+			>
 				<div className="fixed inset-0 w-full h-full pointer-events-none">
 					<ParticlesClient
 						particleColors={["#ffffff", "#000000"]}

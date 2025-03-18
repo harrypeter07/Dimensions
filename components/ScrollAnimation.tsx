@@ -104,7 +104,7 @@ const content = [
 export default function StickyScrollRevealDemo() {
   return (
    <section className="overflow-hidden w-screen h-[400vh]">
-      <StickyScroll  content={content} />
+      <StickyScroll  eventContent={content} />
       </section>
   );
 }

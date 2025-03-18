@@ -7,8 +7,8 @@
 
 // const AnimatedHero = () => {
 //   return (
-//     <div className="relative w-full h-screen overflow-hidden">
-//       <div className="relative z-10 grid items-center justify-center h-full grid-cols-1 grid-cols-2 lg:grid-cols-2 max-sm:grid-cols-1">
+//     <div className="overflow-hidden relative w-full h-screen">
+//       <div className="grid relative z-10 grid-cols-1 grid-cols-2 justify-center items-center h-full lg:grid-cols-2 max-sm:grid-cols-1">
 //         <div className="h-[40%] w-[100%] max-sm:w-[120%] grid grid-cols-1">
 //          <div className="w-[100%] h-[100%]">
           
@@ -27,7 +27,7 @@
 //             borderColor="#00FFFF"
 //             glowColor="rgba(0, 255, 255, 0.6)"
 //           />
-//           <p className="max-w-2xl px-4 mx-auto mt-6 text-xl text-gray-300">
+//           <p className="px-4 mx-auto mt-6 max-w-2xl text-xl text-gray-300">
 //             Experience the future of technology at our premier tech festival
 //           </p>
 //         </div>
@@ -44,14 +44,14 @@ import React from "react";
 import TrueFocus from "./TrueFocus";
 import PlatformContainer from "../PlatFormContainer";
 import RobotContainer from "../RobotContainer";
-
+import LogoHoverEffect from "../Logoe";
 const AnimatedHero = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      <div className="relative z-10 grid items-center h-full grid-cols-1 lg:grid-cols-2">
+    <div className="overflow-hidden relative w-full h-screen">
+      <div className="grid relative z-10 grid-cols-1 items-center h-full lg:grid-cols-2">
         {/* Left side - Robot and Platform */}
         <div className="flex flex-col items-center justify-center h-full mb-[25vh] ml-[-25vh]">
-          <div className="relative flex flex-col items-center w-3/4">
+          <div className="flex relative flex-col items-center w-3/4">
             {/* Robot positioned above platform */}
             <div className="w-full mb-[-90px]">
               <RobotContainer />
@@ -64,15 +64,16 @@ const AnimatedHero = () => {
         </div>
         
         {/* Right side - Text content */}
-        <div className="flex flex-col items-center justify-center h-full">
+        <div className="flex flex-col justify-center items-center h-full">
           <TrueFocus
-            sentence="Welcome to Dimensions"
+            sentence="WELCOME TO 3D WORLD OF"
             manualMode={false}
             blurAmount={7}
             borderColor="#00FFFF"
             glowColor="rgba(0, 255, 255, 0.6)"
           />
-          <p className="max-w-2xl px-4 mx-auto mt-6 text-xl text-gray-300">
+          <LogoHoverEffect text="AXIS 25"/>
+          <p className="px-4 mx-auto mt-6 max-w-2xl text-xl text-gray-300">
             Experience the future of technology at our premier tech festival
           </p>
         </div>

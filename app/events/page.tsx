@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Footer from "@/components/layout/Footer";
 import Timeline from "@/components/3d/Timeline";
 import ChatBot from "@/components/ui/ChatBot";
 import { motion } from "framer-motion";
@@ -21,7 +20,7 @@ export default function EventsPage() {
 							borderColor="#6366f1"
 							glowColor="rgba(99, 102, 241, 0.6)"
 						/>
-						<p className="max-w-3xl mx-auto mt-8 text-lg text-gray-300 md:text-xl">
+						<p className="mx-auto mt-8 max-w-3xl text-lg text-gray-300 md:text-xl">
 							Join us for exciting tech events and workshops throughout the
 							year.
 						</p>
@@ -86,7 +85,7 @@ export default function EventsPage() {
 				</div>
 			</div>
 			<ChatBot />
-			<Footer />
+			
 		</div>
 	);
 }

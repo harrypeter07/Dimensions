@@ -119,7 +119,7 @@ const TrueFocus = ({
 
 	return (
 		<div
-			className="relative flex flex-wrap items-center justify-center gap-4"
+			className="flex relative flex-wrap gap-4 justify-center items-center"
 			ref={containerRef}
 		>
 			{words.map((word, index) => {
@@ -130,7 +130,7 @@ const TrueFocus = ({
 						ref={(el) => {
 							wordRefs.current[index] = el;
 						}}
-						className="relative text-[5rem] font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#00FFFF] via-[#4169E1] to-[#00FFFF] mr-4 lg:text-6xl  max-sm:text-3xl max-md:text-4xl"
+						className="relative text-[5rem] font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#00FFFF] via-[#4169E1] to-[#00FFFF] mr-4 lg:text-6xl  max-sm:text-2xl max-md:text-2xl"
 						style={{
 							filter: `blur(${isActive ? 0 : blurAmount}px)`,
 							transition: `filter ${animationDuration}s ease`,

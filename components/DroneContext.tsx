@@ -63,7 +63,7 @@ export const DroneProvider: React.FC<{ children: React.ReactNode }> = ({
 			x: position[0],
 			y: position[1],
 			z: position[2],
-			duration: 3.2,
+			duration: 1.2,
 			ease: "power3.out",
 			onUpdate: () => {
 				setDronePosition([

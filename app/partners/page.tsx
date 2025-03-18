@@ -60,27 +60,27 @@ const PartnersPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto"
+        className="mx-auto max-w-7xl"
       >
-        <div className="text-center mb-16">
+        <div className="mb-16 text-center">
           <TrueFocus
-            sentence="Partners & Sponsors"
+            sentence="PARTNERS & SPONSORS"
             manualMode={true}
             blurAmount={3}
             borderColor="#6366f1"
             glowColor="rgba(99, 102, 241, 0.6)"
           />
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-8">
+          <p className="mx-auto mt-8 max-w-3xl text-lg text-gray-300 md:text-xl">
             Collaborating with industry leaders to bring you cutting-edge technology and innovation.
           </p>
         </div>
 
         {/* Partners Section */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+          <h2 className="mb-8 text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 md:text-4xl">
             Our Partners
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {partners.map((partner, index) => (
               <motion.div
                 key={index}
@@ -104,10 +104,10 @@ const PartnersPage = () => {
 
         {/* Sponsors Section */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+          <h2 className="mb-8 text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 md:text-4xl">
             Our Sponsors
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {sponsors.map((sponsor, index) => (
               <motion.div
                 key={index}
@@ -135,10 +135,10 @@ const PartnersPage = () => {
           transition={{ delay: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+          <h2 className="mb-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 md:text-4xl">
             Become a Partner
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="mx-auto mb-8 max-w-3xl text-lg text-gray-300">
             Join us in shaping the future of technology. Partner with Dimensions 2024 and be part of something extraordinary.
           </p>
           <motion.button
