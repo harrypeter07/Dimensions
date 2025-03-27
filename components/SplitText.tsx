@@ -9,7 +9,6 @@ interface SplitTextProps {
 	animationTo?: { [key: string]: string | number };
 	easing?: string;
 	threshold?: number;
-	rootMargin?: string;
 	textAlign?: "left" | "center" | "right";
 	onLetterAnimationComplete?: () => void;
 }
@@ -22,7 +21,6 @@ const SplitText = ({
 	animationTo = { opacity: 1, y: 0 },
 	easing = "easeOut",
 	threshold = 0.1,
-	rootMargin = "-100px",
 	textAlign = "center",
 	onLetterAnimationComplete,
 }: SplitTextProps) => {
@@ -32,7 +30,6 @@ const SplitText = ({
 	const isInView = useInView(ref, {
 		once: true,
 		amount: threshold,
-		margin: rootMargin,
 	});
 
 	useEffect(() => {
@@ -70,7 +67,7 @@ const SplitText = ({
 									delay: index * (delay / 1000),
 									ease: easing,
 								}}
-								className="inline-block transform transition-opacity will-change-transform"
+								className="inline-block transition-opacity transform will-change-transform"
 							>
 								{letter}
 							</motion.span>
