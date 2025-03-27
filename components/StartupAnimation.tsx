@@ -1,12 +1,75 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RobotContainer from "./RobotContainer";
-import SplitText from "./SplitText";
 import CountUp from "./CountUp";
 
 interface StartupAnimationProps {
 	onAnimationComplete: () => void;
 }
+
+const AnimatedText = ({
+	text,
+	className,
+}: {
+	text: string;
+	className: string;
+}) => {
+	const words = text.split(" ");
+
+	const container = {
+		hidden: { opacity: 0 },
+		visible: (i = 1) => ({
+			opacity: 1,
+			transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+		}),
+	};
+
+	const child = {
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				type: "spring",
+				damping: 12,
+				stiffness: 100,
+			},
+		},
+		hidden: {
+			opacity: 0,
+			y: 20,
+			transition: {
+				type: "spring",
+				damping: 12,
+				stiffness: 100,
+			},
+		},
+	};
+
+	return (
+		<motion.div
+			style={{
+				overflow: "hidden",
+				display: "flex",
+				flexWrap: "wrap",
+				justifyContent: "center",
+			}}
+			variants={container}
+			initial="hidden"
+			animate="visible"
+			className={className}
+		>
+			{words.map((word, index) => (
+				<motion.span
+					variants={child}
+					style={{ marginRight: "0.25em", display: "inline-block" }}
+					key={index}
+				>
+					{word}
+				</motion.span>
+			))}
+		</motion.div>
+	);
+};
 
 const StartupAnimation: React.FC<StartupAnimationProps> = ({
 	onAnimationComplete,
@@ -80,7 +143,7 @@ const StartupAnimation: React.FC<StartupAnimationProps> = ({
 									separator=","
 									direction="up"
 									duration={8}
-									className="font-bold text-white text-7xl"
+									className="text-6xl font-bold text-white"
 									onEnd={() => {
 										setShowCountUp(false);
 										setCountUpComplete(true);
@@ -113,22 +176,10 @@ const StartupAnimation: React.FC<StartupAnimationProps> = ({
 								style={{ pointerEvents: "none" }}
 							>
 								{showText && (
-									<div className="max-w-xl px-4 text-center">
-										<SplitText
+									<div className="max-w-xl px-4">
+										<AnimatedText
 											text={currentText}
-											className="text-4xl font-bold text-white md:text-5xl"
-											delay={25}
-											animationFrom={{
-												opacity: 0,
-												transform: "translate3d(0,20px,0)",
-											}}
-											animationTo={{
-												opacity: 1,
-												transform: "translate3d(0,0,0)",
-											}}
-											easing="easeOutQuart"
-											threshold={0.1}
-											rootMargin="-20px"
+											className="text-3xl font-bold text-white md:text-4xl"
 										/>
 									</div>
 								)}
