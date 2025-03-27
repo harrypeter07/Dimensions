@@ -86,14 +86,15 @@ export default function CountUp({
 	useEffect(() => {
 		const unsubscribe = springValue.on("change", (latest) => {
 			if (ref.current) {
-				const options = {
+				const roundedNumber = Math.round(latest);
+				const options: Intl.NumberFormatOptions = {
 					useGrouping: !!separator,
 					minimumFractionDigits: 0,
 					maximumFractionDigits: 0,
 				};
 
 				const formattedNumber = Intl.NumberFormat("en-US", options).format(
-					latest.toFixed(0)
+					roundedNumber
 				);
 
 				ref.current.textContent = separator
